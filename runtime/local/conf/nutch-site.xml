@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>http.agent.name</name>
+		<value>QuickSearch Beta</value>
+	</property>
+	<property>
+		<name>linkdb.ignore.internal.links</name>
+		<value>false</value>
+		<description>If true, when adding new links to a page, links from
+			the same host are ignored.  This is an effective way to limit the
+			size of the link database, keeping only the highest quality
+			links.
+		</description>
+	</property>
+</configuration>
