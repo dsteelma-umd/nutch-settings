@@ -12,7 +12,7 @@ This tutorial will be tailored to crawl on the [UMD Libraries website][2].
 
 * Unix environment (This was tested on Ubuntu Server 16.04)
 * Java Runtime/Development Environment (JDK 1.8/Java 8)
-* Apache Ant: http://ant.apache.org/
+* Apache Ant
 
 ### Nutch
 
@@ -31,11 +31,11 @@ This tutorial will be tailored to crawl on the [UMD Libraries website][2].
 > ant
 ```
 
-4) [OPTIONAL] Setup permissions and JAVA_DIR:
+4) [OPTIONAL] Setup permissions and JAVA_HOME:
 
 ```
 > chmod +x bin/nutch
-> export JAVA_DIR=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+> export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 ```
 
 5) Our Nutch build is now ready at:
