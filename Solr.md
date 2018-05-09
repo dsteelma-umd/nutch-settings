@@ -53,4 +53,4 @@ We will need to create a Solr *core* for Nutch to index results to.
 http://localhost:8983/solr/#/nutch
 ```
 
-NOTE: The browser URL ```http://localhost:8983/solr/#/nutch ``` is different from the URL we will provide to the command line ```http://localhost:8983/solr/nutch```
+NOTE: The browser URL ```http://localhost:8983/solr/#/nutch ``` is different from the URL we will provide to the Nutch command line ```http://localhost:8983/solr/nutch```

@@ -2,13 +2,13 @@
 
 ## Installation
 
-1) Download the Apache Nutch source (apache-nutch-1.X-src.zip).
+1) Download the Apache Nutch source (apache-nutch-1.1X-src.zip).
 
 2) Extract it and change directory:
 
 ```
-> tar xf apache-nutch-1.X-src.zip
-> cd apache-nutch-1.X/
+> tar xf apache-nutch-1.1X-src.zip
+> cd apache-nutch-1.1X/
 ```
 
 3) Run ant:
@@ -54,9 +54,9 @@ We will need to add one property to ```conf/nutch-site.xml``` to initiate the se
 A URL seed list includes a list of websites, one-per-line, which nutch will look to crawl. We can create this list by using the following commands and adding the seed urls:
 
 ```
-mkdir -p ${NUTCH_DIR}/urls
-cd ${NUTCH_DIR}/urls
-vi seed.txt
+> mkdir -p ${NUTCH_DIR}/urls
+> cd ${NUTCH_DIR}/urls
+> vi seed.txt
 ```
 
 Our initial seed file will only contain the UMD Libraries Homepage:
@@ -91,7 +91,7 @@ In order to crawl the website, you will need to run the following command from
 ```${NUTCH_DIR}```:
 
 ```
-bin/crawl -i -D solr.server.url=http://localhost:8983/solr/nutch -s urls/ LibCrawl/  10
+> bin/crawl -i -D solr.server.url=http://localhost:8983/solr/nutch -s urls/ LibCrawl/  10
 ```
 
 This will generate the seed list from files in the ```urls``` directory, index the results on the Solr URL ```http://localhost:8983/solr/nutch```, generate the crawl and link databases in the ```LibCrawl``` directory, and run this search upto depth ```10```.
@@ -99,5 +99,5 @@ This will generate the seed list from files in the ```urls``` directory, index t
 You can also run the same crawl without indexing it to the Solr URL:
 
 ```
-bin/crawl -s urls/ LibCrawl/  10
+> bin/crawl -s urls/ LibCrawl/  10
 ```
