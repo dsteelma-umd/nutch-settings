@@ -22,9 +22,9 @@ Here are a few resources that were handy in understanding and troubleshooting cr
 
 * [Deleting stale URLs from Nutch/Solr][10]
 
-* [links-extractor][11]
+* [How to run Jobs using the Nutch REST service][11]
 
-* [How to run Jobs using the Nutch REST service][12]
+* [How to re-crawl with Nutch][12]
 
 
 	
@@ -38,5 +38,5 @@ Here are a few resources that were handy in understanding and troubleshooting cr
 [8]: https://github.com/BayanGroup/nutch-custom-search
 [9]: https://stackoverflow.com/questions/7722508/how-to-delete-all-data-from-solr-and-hbase?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 [10]: http://lucene.472066.n3.nabble.com/Deleting-stale-URLs-from-Nutch-Solr-td612958.html
-[11]: https://github.com/jorgelbg/indexer-links
-[12]: https://wiki.apache.org/nutch/Nutch_1.X_RESTAPI/RunningJobsTutorial
+[11]: https://wiki.apache.org/nutch/Nutch_1.X_RESTAPI/RunningJobsTutorial
+[12]: https://www.pascaldimassimo.com/2010/06/11/how-to-re-crawl-with-nutch/
