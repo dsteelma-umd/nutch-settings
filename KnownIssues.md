@@ -4,7 +4,7 @@ The following issues arise when trying to crawl the UMD Libraries website:
 
 ## SiteMap Parser
 
-The current SitemapProcessor parses the UMD Libraries sitemap with errors:
+The current [SitemapProcessor][1] parses the UMD Libraries sitemap with errors:
 
 ```
 > echo 'https://www.lib.umd.edu/sitemap.xml' > sitemaps/seed.txt
@@ -38,8 +38,10 @@ SitemapProcessor: Finished at 2018-05-09 18:50:50, elapsed: 00:00:05
 
 ## OnClick URLs
 
-Certain URL hyperlinks surrounded by JavaScript are not parsed properly. These can be viewed in the linkdb dumps. View the inlinks for the following entry in the dump:
+Certain URL hyperlinks surrounded by JavaScript are not parsed properly. These can be viewed in the linkdb dumps. View the anchors for the inlinks for the following entry in the dump to verify:
 
 ```
 https://www.lib.umd.edu/pagenotfound	Inlinks:
 ```
+
+[1]: https://wiki.apache.org/nutch/SitemapFeature
