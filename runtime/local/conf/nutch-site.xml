@@ -61,4 +61,13 @@
 	  <description>The default number of seconds between re-fetches of a page (30 days).
 	  </description>
 	</property>
+	<property>
+	  <name>fetcher.server.delay</name>
+	  <value>1.0</value>
+	  <description>The number of seconds the fetcher will delay between 
+	   successive requests to the same server. Note that this might get
+	   overridden by a Crawl-Delay from a robots.txt and is used ONLY if 
+	   fetcher.threads.per.queue is set to 1.
+	   </description>
+	</property>
 </configuration>
