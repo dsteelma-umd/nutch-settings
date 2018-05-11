@@ -121,12 +121,105 @@ This command will print out the crawl statistics to stdout:
 > bin/nutch readdb <folder>/crawldb/ -stats
 ```
 
+The head and tail end of this output is most useful for a quick snippet of the search:
+
+```
+Statistics for CrawlDb: <folder>/crawldb/
+TOTAL urls:	636
+shortest fetch interval:	00:10:00
+avg fetch interval:	00:10:06
+longest fetch interval:	00:15:00
+...
+status 1 (db_unfetched):	310
+status 2 (db_fetched):	297
+status 3 (db_gone):	14
+status 4 (db_redir_temp):	3
+status 5 (db_redir_perm):	9
+status 6 (db_notmodified):	1
+status 7 (db_duplicate):	2
+CrawlDb statistics: done
+```
+
 ### URL Dumps
 
 This command will generate a detailed dump of the URLs traversed:
 
 ```
 > bin/nutch readdb <folder>/crawldb/ -dump <folder>_urls
+```
+
+The dump file contains detailed information on each link including URL, hash, timestamps, and HTTP status codes. 
+
+There are six main types of Nutch statuses associated with each crawl:
+
+1) Unfetched: ```http://lib.umd.edu/directory``` will be fetched on the next cycle (depth)
+
+```
+http://lib.umd.edu/directory	Version: 7
+Status: 1 (db_unfetched)
+...
+Metadata: 
+```
+
+2) Fetched: ```https://www.lib.umd.edu/``` was successfully fetched
+
+```
+https://www.lib.umd.edu/	Version: 7
+Status: 2 (db_fetched)
+...
+Metadata: 
+ 	_pst_=success(1), lastModified=0
+	_rs_=73
+	Content-Type=text/html
+	nutch.protocol.code=200
+```
+
+3) Permanent Redirects: ```https://www.lib.umd.edu/help.html``` was temporarily redirected to ```http://umd.libanswers.com/```
+
+```
+https://www.lib.umd.edu/help.html Version: 7
+Status: 5 (db_redir_perm)
+...
+Metadata: 
+ 	_pst_=moved(12), lastModified=0: http://umd.libanswers.com/
+	_rs_=58
+	Content-Type=text/html
+	nutch.protocol.code=301
+```
+
+4) Temporary Redirects: ```http://lib.umd.edu/``` was temporarily redirected to ```https://www.lib.umd.edu/```
+
+```
+http://lib.umd.edu/	Version: 7
+Status: 4 (db_redir_temp)
+...
+Metadata: 
+ 	_pst_=temp_moved(13), lastModified=0: https://www.lib.umd.edu/
+	_rs_=3
+	Content-Type=text/html
+	nutch.protocol.code=302
+``` 
+
+5) Not Found:
+
+```
+https://www.lib.umd.edu/pagenotfound	Version: 7
+Status: 3 (db_gone)
+...
+Metadata: 
+ 	_pst_=notfound(14), lastModified=0: https://www.lib.umd.edu/pagenotfound
+	_rs_=581
+	nutch.protocol.code=404
+```
+
+6) Denied by ```robots.txt```:
+
+```
+https://www.lib.umd.edu/directory/facet/ Version: 7
+Status: 3 (db_gone)
+...
+Metadata: 
+ 	_pst_=robots_denied(18), lastModified=0
 ```
 
 ### Inlink Dumps
@@ -137,3 +230,14 @@ This command will generate a detailed dump of the inlinks to each URL traversed:
 > bin/nutch readlinkdb <folder>/linkdb/ -dump <folder>_links
 ```
 
+The output will have the following format:
+
+```
+https://www.lib.umd.edu/	Inlinks:
+ fromUrl: https://www.lib.umd.edu/find anchor: University of Maryland Libraries
+ fromUrl: https://www.lib.umd.edu/special/guides/rare-books-art anchor: Home
+ fromUrl: https://www.lib.umd.edu/groupvisits anchor: Home
+ ...
+```
+
+This shows all the links pointing to ```https://www.lib.umd.edu/```
