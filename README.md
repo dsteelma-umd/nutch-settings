@@ -22,7 +22,27 @@ Nutch | Solr
 
 A *close* version of Nutch or Solr can be used, but is not guaranteed to work with this tutorial.
 
+## Walkthrough
+
+The walkthrough is best followed in this order:
+
+1) [Setting up Nutch][4]
+
+2) [Setting up Solr][5]
+
+3) [Crawling and Analyzing Results][6]
+
+4) [Known Issues][7]
+
+5) [Resources][8]
+
+
 
 [1]: https://www.apache.org/dyn/closer.cgi/nutch/
 [2]: https://www.lib.umd.edu/
 [3]: https://lucene.apache.org/solr/
+[4]: https://github.com/samirlalvani/nutch-settings/blob/master/Nutch.md
+[5]: https://github.com/samirlalvani/nutch-settings/blob/master/Solr.md
+[6]: https://github.com/samirlalvani/nutch-settings/blob/master/Crawlanalysis.md
+[7]: https://github.com/samirlalvani/nutch-settings/blob/master/KnownIssues.md
+[8]: https://github.com/samirlalvani/nutch-settings/blob/master/Resources.md
